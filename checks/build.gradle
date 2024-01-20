@@ -1,0 +1,32 @@
+plugins {
+    id 'java-library'
+    id 'com.android.lint'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.21")
+    compileOnly "com.android.tools.lint:lint-api:31.2.1"
+    compileOnly "com.android.tools.lint:lint-checks:31.2.1"
+
+    testImplementation "com.android.tools.lint:lint-tests:31.2.1"
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "org.assertj:assertj-core:3.10.0"
+}
+
+jar {
+    manifest {
+        attributes("Lint-Registry-v2": "com.sabiou.lint.checks.ToastIssueRegistry")
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
