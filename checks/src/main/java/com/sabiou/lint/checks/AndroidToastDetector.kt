@@ -16,7 +16,7 @@ class AndroidToastDetector : Detector(), Detector.UastScanner {
         val ISSUE = Issue.create(
             id = "AvoidClassicToast",
             briefDescription = "This is issued to prevent usage of classic android toast widget",
-            explanation = "AestheticDialogs should be used",
+            explanation = "AestheticDialogs should be used to adheres to our design system guidelines.",
             category = Category.CORRECTNESS,
             priority = 8,
             severity = Severity.WARNING,
