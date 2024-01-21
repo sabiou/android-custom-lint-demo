@@ -14,12 +14,6 @@ dependencies {
     testImplementation "org.assertj:assertj-core:3.10.0"
 }
 
-jar {
-    manifest {
-        attributes("Lint-Registry-v2": "com.sabiou.lint.checks.ToastIssueRegistry")
-    }
-}
-
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
@@ -28,5 +22,11 @@ java {
 compileKotlin {
     kotlinOptions {
         jvmTarget = "11"
+    }
+}
+
+jar {
+    manifest {
+        attributes("Lint-Registry-v2": "com.sabiou.lint.checks.ToastIssueRegistry")
     }
 }

@@ -17,9 +17,9 @@ class AndroidToastDetector : Detector(), Detector.UastScanner {
             id = "AvoidClassicToast",
             briefDescription = "This is issued to prevent usage of classic android toast widget",
             explanation = "AestheticDialogs should be used to adheres to our design system guidelines.",
-            category = Category.CORRECTNESS,
-            priority = 8,
-            severity = Severity.WARNING,
+            category = Category.CUSTOM_LINT_CHECKS,
+            priority = 10,
+            severity = Severity.ERROR,
             implementation = Implementation(
                 AndroidToastDetector::class.java,
                 Scope.JAVA_FILE_SCOPE
